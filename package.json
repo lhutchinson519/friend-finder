@@ -1,0 +1,23 @@
+{
+  "name": "friend-finder",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lhutchinson519/friend-finder.git"
+  },
+  "author": "Lauren Hutchinson",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lhutchinson519/friend-finder/issues"
+  },
+  "homepage": "https://github.com/lhutchinson519/friend-finder#readme",
+  "dependencies": {
+    "bootstrap": "^3.3.7"
+  }
+}
