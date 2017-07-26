@@ -5,10 +5,149 @@
     <title>Friend Finder</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    
 </head>
 
 <body>
+    <header>Survey Questions: Find your BFF!</header>
+    <br>
+    <form>
+        <fieldset>
+            <div class="form-group">
+                <label for="name">About You</label>
+                <p>Name (Required)</p>
+                <input type="text" id="name" class="form-control">
+                <p>Link to Photo Image (Required)</p>
+                <input type="text" id="photo" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="options">Question 1</label>
+                <p>You consider yourself a very active person.</p>
+                <select id="options" class="form-control">
+                    <option>1 (Strongly Disagree)</option>
+                    <option>2 (Meh)</option>
+                    <option>3 (Yes and No)</option>
+                    <option>4 (For the most part)</option>
+                    <option>5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="options">Question 2</label>
+                <p>You love the outdoors.</p>
+                <select id="options" class="form-control">
+                    <option>1 (Strongly Disagree)</option>
+                    <option>2 (Meh)</option>
+                    <option>3 (Yes and No)</option>
+                    <option>4 (For the most part)</option>
+                    <option>5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="options">Question 3</label>
+                <p>You prefer your own food over family style.</p>
+                <select id="options" class="form-control">
+                    <option>1 (Strongly Disagree)</option>
+                    <option>2 (Meh)</option>
+                    <option>3 (Yes and No)</option>
+                    <option>4 (For the most part)</option>
+                    <option>5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="options">Question 4</label>
+                <p>Wine night is every night.</p>
+                <select id="options" class="form-control">
+                    <option>1 (Strongly Disagree)</option>
+                    <option>2 (Meh)</option>
+                    <option>3 (Yes and No)</option>
+                    <option>4 (For the most part)</option>
+                    <option>5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="options">Question 5</label>
+                <p>Can't miss game night! #ESPN.</p>
+                <select id="options" class="form-control">
+                    <option>1 (Strongly Disagree)</option>
+                    <option>2 (Meh)</option>
+                    <option>3 (Yes and No)</option>
+                    <option>4 (For the most part)</option>
+                    <option>5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="options">Question 6</label>
+                <p>You consider yourself a breakfast person.</p>
+                <select id="options" class="form-control">
+                    <option>1 (Strongly Disagree)</option>
+                    <option>2 (Meh)</option>
+                    <option>3 (Yes and No)</option>
+                    <option>4 (For the most part)</option>
+                    <option>5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="options">Question 7</label>
+                <p>A mellow night with friends beats going out any night of the week. That netflix and chill.</p>
+                <select id="options" class="form-control">
+                    <option>1 (Strongly Disagree)</option>
+                    <option>2 (Meh)</option>
+                    <option>3 (Yes and No)</option>
+                    <option>4 (For the most part)</option>
+                    <option>5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="options">Question 8</label>
+                <p>Ski bums over beach bums. Shred it!</p>
+                <select id="options" class="form-control">
+                    <option>1 (Strongly Disagree)</option>
+                    <option>2 (Meh)</option>
+                    <option>3 (Yes and No)</option>
+                    <option>4 (For the most part)</option>
+                    <option>5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="options">Question 9</label>
+                <p>Friends is the greatest show ever made.</p>
+                <select id="options" class="form-control">
+                    <option>1 (Strongly Disagree)</option>
+                    <option>2 (Meh)</option>
+                    <option>3 (Yes and No)</option>
+                    <option>4 (For the most part)</option>
+                    <option>5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="options">Question 10</label>
+                <p>Positivity is the best policy. Namaste.</p>
+                <select id="options" class="form-control">
+                    <option>1 (Strongly Disagree)</option>
+                    <option>2 (Meh)</option>
+                    <option>3 (Yes and No)</option>
+                    <option>4 (For the most part)</option>
+                    <option>5 (Strongly Agree)</option>
+                </select>
+            </div>
+            <button id="add-btn" type="submit" class="btn btn-primary">Submit</button>
+        </fieldset>
+    </form>
+    <script type="text/javascript">
+    $("#add-btn").on("click", function(event) {
+        event.preventDefault();
+        var newPerson = {
+            name: $("#name").val().trim(),
+            photo: $("#photo").val().trim(),
+            scores: $("#option").val().trim(),
+        };
+
+        $.post("/api/friends", newPerson)
+            .done(function(data) {
+                console.log(data);
+                alert("Adding person...");
+            });
+    });
+    </script>
 </body>
 
 </html>

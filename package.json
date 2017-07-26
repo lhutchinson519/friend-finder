@@ -18,6 +18,10 @@
   },
   "homepage": "https://github.com/lhutchinson519/friend-finder#readme",
   "dependencies": {
-    "bootstrap": "^3.3.7"
+    "body-parser": "^1.17.2",
+    "bootstrap": "^3.3.7",
+    "express": "^4.15.3",
+    "http": "0.0.0",
+    "path": "^0.12.7"
   }
 }
