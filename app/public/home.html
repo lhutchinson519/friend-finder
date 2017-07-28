@@ -15,14 +15,5 @@
         </div>
     </div>
 </body>
-<script type="text/javascript">
-$("#go").on("click", function() {
-    event.preventDefault();
-    //on click show the survey
-    app.get("/survey", function(req, res) {
-        res.sendFile(path.join(__dirname, "app/public/survey.html"));
-    });
-})
-</script>
 
 </html>
