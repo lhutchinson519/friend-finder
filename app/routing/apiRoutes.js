@@ -12,14 +12,18 @@ module.exports = function(app) {
 
     // Create New person - takes in JSON input
     app.post("/api/friends", function(req, res) {
-        var newperson = req.body;
+        var newFriend = req.body;
 
-        newperson.routeName = newperson.name.replace(/\s+/g, "").toLowerCase();
+        newFriend.name = newFriend.name.replace(/\s+/g, "").toLowerCase();
 
-        console.log(newperson);
+        console.log(newFriend);
 
-        characters.push(newperson);
+        characters.push(newFriend);
 
-        res.json(newperson);
+        res.json(newFriend);
     });
+
+//     app.get("/api/", function(req, res){
+// 	res.json(newFriend);
+// })
 };
