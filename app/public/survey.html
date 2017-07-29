@@ -151,11 +151,21 @@
         }
         console.log(newFriend);
 
-        // $.post("/api/friend", newFriend)
-        // .done(function(data) {
-        //   console.log(data);
-        //   alert("Adding friend...");
-        // });
+
+        $.post("/api/friends", newFriend)
+            .done(function(data) {
+                //console.log(data);
+                alert("Adding friend...");
+            });
+
+        // var difference = "";
+
+        // console.log(selectArr);  
+        
+        // for (i = 0; i < selectArr.length; i ++){
+        //     console.log(selectArr[i]);
+            
+        // }
     });
 
     // function displayPeople() {

@@ -6,24 +6,38 @@ var app = express();
 var PORT = process.env.PORT || 8080;
 
 module.exports = function(app) {
-    app.get("/api/friends", function(req, res) {
-        res.json(friends);
-    });
+        app.get("/api/friends", function(req, res) {
+            res.json(friends);
+        });
 
-    // Create New person - takes in JSON input
-    app.post("/api/friends", function(req, res) {
-        var newFriend = req.body;
+        // app.get("/api/", function(req, res) {
+        //     res.json(newFriend);
+        // })
+        // Create New person - takes in JSON input
+        app.post("/api/friends", function(req, res) {
 
-        newFriend.name = newFriend.name.replace(/\s+/g, "").toLowerCase();
+                var newFriend = req.body;
 
-        console.log(newFriend);
+                var newFriendScore = [];
+                var compareFriends = [];
 
-        characters.push(newFriend);
+                console.log(newFriend);
 
-        res.json(newFriend);
-    });
+                for (i = 0; i < friends.length; i++){
+                	compareFriends = friends[i].scores;
+                	console.log("Friends Scores: " + compareFriends);
+                }
 
-//     app.get("/api/", function(req, res){
-// 	res.json(newFriend);
-// })
-};
+                for (i = 0; i < newFriend.length; i++) {
+                    newFriendScore = newFriend[i].scores;
+                    console.log("New Friend Scores" + newFriendScore);
+                }
+
+
+                    // friends.push(newFriend);
+                    // console.log(friends);
+
+
+                    //res.json(newFriend);
+        });
+    };
