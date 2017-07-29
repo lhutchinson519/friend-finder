@@ -140,10 +140,12 @@
         var select = $("select option:selected");
         var selectArr = [];
 
+        //for loop to push the selected question value
         for (i = 0; i < select.length; i++) {
             selectArr.push(select[i].value);
         }
 
+        //adding new friend
         var newFriend = {
             name: $("#name").val().trim(),
             photo: $("#photo").val().trim(),
@@ -151,41 +153,35 @@
         }
         console.log(newFriend);
 
-
+        //posting the new friend to the terminal and to the friends page
         $.post("/api/friends", newFriend)
             .done(function(data) {
                 //console.log(data);
                 alert("Adding friend...");
             });
-
-        // var difference = "";
-
-        // console.log(selectArr);  
-        
-        // for (i = 0; i < selectArr.length; i ++){
-        //     console.log(selectArr[i]);
-            
-        // }
     });
-
-    // function displayPeople() {
-    //     var currentURL = window.location.origin;
-    //     $.ajax({ url: currentURL + "/api/friends", method: "GET" })
-    //         .done(function(friends) {
-    //             console.log("-----------------");
-    //             console.log("URL: " + currentURL + "api/friends");
-    //             console.log("-----------------");
-    //             console.log(friends);
-    //             console.log("-----------------");
-
-    //             for (var i = 0; i < friends.length; i++) {
-    //                 console.log(friends[i]);
-    //             }
-    //         });
-    // };
-
-    // displayPeople();
     </script>
 </body>
 
 </html>
+
+
+
+
+<!--     function displayPeople() {
+        var currentURL = window.location.origin;
+        $.ajax({ url: currentURL + "/api/friends", method: "GET" })
+            .done(function(friends) {
+                console.log("");
+                console.log("URL: " + currentURL + "api/friends");
+                console.log("");
+                console.log(friends);
+                console.log("");
+
+                for (var i = 0; i < friends.length; i++) {
+                    console.log(friends[i]);
+                }
+            });
+    };
+
+    displayPeople(); -->
